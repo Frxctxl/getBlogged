@@ -8,12 +8,7 @@ const Blog = client.define('Blog', {
     allowNull: false
   },
   author: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false
+    type: DataTypes.STRING
   },
   content: {
     type: DataTypes.TEXT,

@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Blog } = require('../models');
 module.exports = {
   // showHomepage(req, res) {
   //   res.render('homepage', {
@@ -15,6 +15,19 @@ module.exports = {
     } catch (error) {
       console.log(error);
       res.redirect('/register');
+    }
+  },
+  async createBlog(req, res) {
+    try {
+      const data = {
+        ...req.body,
+        author: req.session.user_id
+      }
+      const blog = await Blog.create(data);
+      console.log(blog)
+      res.redirect('/')
+    } catch (error) {
+      console.log(error);
     }
   }
 };
