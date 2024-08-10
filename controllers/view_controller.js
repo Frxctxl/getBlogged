@@ -1,5 +1,7 @@
 module.exports = {
   showHomepage(req, res) {
-    res.render('homepage');
+    res.render('homepage', {
+      title: 'Get Blogged'
+    });
   }
 };
