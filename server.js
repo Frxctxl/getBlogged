@@ -4,7 +4,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { engine } = require('express-handlebars');
 
-const client = require(process.env.DB_URL || './config/connection');
+const client = require('./config/connection');
 const view_routes = require('./routes/view_routes');
 const user_routes = require('./routes/user_routes')
 
